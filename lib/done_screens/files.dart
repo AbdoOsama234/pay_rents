@@ -38,8 +38,8 @@ class Files extends StatelessWidget {
                 columnSpacing: 0, // تحسين المسافات بين الأعمدة
                 dataRowHeight: 45, // تحسين ارتفاع الصفوف
                 headingRowHeight: 50, // تحسين وضوح العناوين
-                border: TableBorder.all(color: Colors.grey.shade300), // لون خفيف للحدود
-                headingRowColor: MaterialStateProperty.all(Colors.blue.shade900), // لون أزرق داكن للعناوين
+                border: TableBorder.all(color: Colors.grey.shade300),
+                headingRowColor: MaterialStateProperty.all(Colors.blue.shade900),
                 columns: const [
                   DataColumn(label: Text("المستند", style: _headerTextStyle)),
                   DataColumn(label: Text("تاريخ البداية", style: _headerTextStyle)),

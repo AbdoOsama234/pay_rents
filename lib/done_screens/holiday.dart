@@ -35,11 +35,11 @@ class Holiday extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: SingleChildScrollView(
               child: DataTable(
-                columnSpacing: 5, // تحسين المسافات بين الأعمدة
-                dataRowHeight: 45, // تحسين ارتفاع الصفوف
-                headingRowHeight: 50, // تحسين وضوح العناوين
-                border: TableBorder.all(color: Colors.grey.shade300), // لون خفيف للحدود
-                headingRowColor: MaterialStateProperty.all(Colors.blue.shade900), // لون أزرق داكن للعناوين
+                columnSpacing: 5,
+                dataRowHeight: 45,
+                headingRowHeight: 50,
+                border: TableBorder.all(color: Colors.grey.shade300),
+                headingRowColor: MaterialStateProperty.all(Colors.blue.shade900),
                 columns: const [
                   DataColumn(label: Text("تاريخ السفر", style: _headerTextStyle)),
                   DataColumn(label: Text("تاريخ العودة", style: _headerTextStyle)),

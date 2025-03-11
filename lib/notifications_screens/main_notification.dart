@@ -39,8 +39,8 @@ class _MainNotificationState extends State<MainNotification> with SingleTickerPr
       body: TabBarView(
         controller: _tabController,
         children: [
-          _buildNotificationList("driver_notifications"), // إشعارات السائق
-          _buildCompanyNotifications(), // إشعارات الشركة + الدفع
+          _buildNotificationList("driver_notifications"),
+          _buildCompanyNotifications(),
         ],
       ),
     );
@@ -64,7 +64,6 @@ class _MainNotificationState extends State<MainNotification> with SingleTickerPr
     );
   }
 
-  // 🔹 دالة إنشاء إشعارات الشركة + الدفع
   Widget _buildCompanyNotifications() {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance.collection('company_notifications').orderBy('date', descending: true).snapshots(),
@@ -79,7 +78,6 @@ class _MainNotificationState extends State<MainNotification> with SingleTickerPr
             List<QueryDocumentSnapshot> companyNotifications = companySnapshot.data?.docs ?? [];
             List<QueryDocumentSnapshot> paidRentNotifications = rentSnapshot.data?.docs ?? [];
 
-            // 🛠 طباعة عدد البيانات المسترجعة للتحقق
             debugPrint("📢 إشعارات الشركة: ${companyNotifications.length}");
             debugPrint("💰 إشعارات الدفع: ${paidRentNotifications.length}");
 
@@ -87,7 +85,6 @@ class _MainNotificationState extends State<MainNotification> with SingleTickerPr
               return const Center(child: Text("لا توجد إشعارات 📭", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)));
             }
 
-            // 🔹 دمج الإشعارات وترتيبها حسب التاريخ
             var allNotifications = [...companyNotifications, ...paidRentNotifications];
             allNotifications.sort((a, b) {
               var dateA = (a.data() as Map<String, dynamic>)["date"] ?? "";
@@ -102,7 +99,6 @@ class _MainNotificationState extends State<MainNotification> with SingleTickerPr
     );
   }
 
-  // 🔹 دالة عرض الإشعارات
   Widget _buildNotificationItems(List<QueryDocumentSnapshot> notifications) {
     return ListView.separated(
       padding: const EdgeInsets.all(10),

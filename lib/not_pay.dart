@@ -39,8 +39,8 @@ class NotPay extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: SingleChildScrollView(
               child: DataTable(
-                columnSpacing: 8, // ✅ تقليل المسافات بين الأعمدة
-                dataRowHeight: 45, // ✅ زيادة ارتفاع الصفوف قليلاً
+                columnSpacing: 8,
+                dataRowHeight: 45,
                 headingRowHeight: 45,
                 border: TableBorder.all(color: Colors.black),
                 columns: [
@@ -62,7 +62,7 @@ class NotPay extends StatelessWidget {
                     DataCell(Text(data["due"]?.toString() ?? "0", style: _cellTextStyle)),
                     DataCell(
                       GestureDetector(
-                        onTap: () => _markAsPaid(doc.id), // ✅ الضغط على "ادفع الآن" يغير الحالة
+                        onTap: () => _markAsPaid(doc.id),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                           decoration: BoxDecoration(

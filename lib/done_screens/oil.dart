@@ -35,11 +35,11 @@ class Oil extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: SingleChildScrollView(
               child: DataTable(
-                columnSpacing: 4, // تحسين المسافات بين الأعمدة
-                dataRowHeight: 45, // تحسين ارتفاع الصفوف
-                headingRowHeight: 50, // تحسين وضوح العناوين
-                border: TableBorder.all(color: Colors.grey.shade300), // لون خفيف للحدود
-                headingRowColor: MaterialStateProperty.all(Colors.blue.shade900), // لون أزرق داكن للعناوين
+                columnSpacing: 4,
+                dataRowHeight: 45,
+                headingRowHeight: 50,
+                border: TableBorder.all(color: Colors.grey.shade300),
+                headingRowColor: MaterialStateProperty.all(Colors.blue.shade900),
                 columns: const [
                   DataColumn(label: Text("تاريخ التغيير", style: _headerTextStyle)),
                   DataColumn(label: Text("المبلغ", style: _headerTextStyle)),
@@ -55,7 +55,7 @@ class Oil extends StatelessWidget {
                   return DataRow(
                     color: MaterialStateProperty.resolveWith<Color?>(
                           (Set<MaterialState> states) {
-                        return index.isEven ? Colors.grey.shade100 : Colors.white; // تناوب ألوان الصفوف
+                        return index.isEven ? Colors.grey.shade100 : Colors.white;
                       },
                     ),
                     cells: [
@@ -92,7 +92,7 @@ class Oil extends StatelessWidget {
                         Text(
                           data["status"],
                           style: TextStyle(
-                            color: data["status"] == "مازال" ? Colors.red : Colors.green, // لون بناءً على الحالة
+                            color: data["status"] == "مازال" ? Colors.red : Colors.green,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -109,10 +109,10 @@ class Oil extends StatelessWidget {
   }
 
   static const TextStyle _headerTextStyle = TextStyle(
-    fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white, // لون أبيض للعناوين
+    fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white,
   );
 
   static const TextStyle _cellTextStyle = TextStyle(
-    fontSize: 13, fontWeight: FontWeight.normal, color: Colors.black, // تحسين حجم الخط
+    fontSize: 13, fontWeight: FontWeight.normal, color: Colors.black,
   );
 }

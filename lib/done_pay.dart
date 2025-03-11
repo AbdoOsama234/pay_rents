@@ -26,7 +26,7 @@ class _DonePayState extends State<DonePay> with SingleTickerProviderStateMixin {
         title: Text("المدفوعات"),
         bottom: TabBar(
           controller: _tabController,
-          isScrollable: true, // يسمح بالتمرير في حال كثرة التبويبات
+          isScrollable: true,
           tabs: [
             Tab(icon: Icon(Icons.apartment), text: "الإيجار"),
             Tab(icon: Icon(Icons.report), text: "المخالفات"),

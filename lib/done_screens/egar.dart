@@ -46,7 +46,7 @@ class Egar extends StatelessWidget {
                 var data = entry.value;
 
                 return DataRow(cells: [
-                  DataCell(Text(index.toString(), style: _cellTextStyle)), // العدد التلقائي
+                  DataCell(Text(index.toString(), style: _cellTextStyle)),
                   DataCell(Text(data["date"], style: _cellTextStyle)),
                   DataCell(Text(data["rent"].toString(), style: _cellTextStyle)),
                   DataCell(Text(data["due"].toString(), style: _cellTextStyle)),
